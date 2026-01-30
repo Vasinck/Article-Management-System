@@ -2358,6 +2358,45 @@
             "tags": [
                 "卷积神经网络/轻量级网络领域的Token Mixer重构。指出ConvNeXt中7×7大核depthwise convolution在GPU上严重受限于memory access而非FLOPs。提出Inception Depthwise Convolution将通道沿维度拆分为4个并行分支：3×3深度卷积、1×k横向条带卷积、k×1纵向条带卷积和恒等映射，将k×k的二次复杂度转化为线性复杂度。在ConvNeXt框架内仅替换DWConv为Inception DWConv，不改训练策略、不引入attention或额外token mixer，实现精度几乎不降而吞吐显著提升。"
             ]
+        },
+        {
+            "title": "CATANet: Efficient Content-Aware Token Aggregation for Lightweight Image Super-Resolution",
+            "tags": [
+                "Token Aggregation Block 是内容感知的 attention 重构模块，用极低的推理成本，把局部 attention 升级为高效、稳定的长程建模能力",
+                "Content-Aware Token Aggregation 机制通过 token center + cosine similarity，将语义相似但空间位置可能很远的 token 聚合到同一组，聚合是内容驱动的，而非固定空间划分",
+                "Token Aggregation Block 包含 IASA（组内自注意力）、IRCA（组间交叉注意力）和子分组机制，推理时不做任何聚类或迭代更新",
+                "TAB 填补了全局 Self-Attention 太慢、Window/Stripe Attention 又 看不远、看不准 的空缺"
+            ],
+            "id": "2953fc1a"
+        },
+        {
+            "title": "TSD-YOLO使小尺寸交通标志检测mAP提升5.1%，FPS达50的实时精准检测模型",
+            "tags": [
+                "TSD-YOLO 是基于 YOLOv8s 的小尺寸交通标志实时检测模型",
+                "SPD 模块通过空间到深度切片将特征图下采样并保留细粒度信息，扩大感受野",
+                "SK 注意力模块使用多尺度卷积分支和自适应权重融合，智能聚焦交通标志区域",
+                "WIoUv3 损失根据样本出现频率和检测难度分配权重，提升难样本检测精度"
+            ],
+            "id": "f068438d"
+        },
+        {
+            "title": "DFIR-DETR 轻量化模型，削减 75% 计算量，小目标检测精度却提升4.2%！",
+            "tags": [
+                "DFIR-DETR 是基于 Transformer 的小目标检测模型，通过动态稀疏注意力、幅度归一化金字塔和频域全局建模解决传统模型的痛点",
+                "DCFA 动态稀疏注意力通过门控网络动态选择关键 Key，将复杂度从 O(N²) 降低到 O(NK)",
+                "DFPN 的幅度归一化上采样在上采样后除以尺度因子平方，解决特征虚胖问题",
+                "FIRC3 通过傅里叶变换建立全局感受野，以 O(N log N) 复杂度增强高频信息"
+            ],
+            "id": "b1f2d1a4"
+        },
+        {
+            "title": "HS-FPN: High Frequency and Spatial Perception FPN for Tiny Object Detection",
+            "tags": [
+                "HS-FPN 是用于微小目标检测的特征金字塔网络，在 FPN 基础上引入高频感知模块和空间依赖感知模块",
+                "HFP 利用高通滤波器生成高频响应，从空间和通道维度加权增强微小目标特征",
+                "SDP 构建特征间的空间依赖关系，弥补传统 FPN 空间感知能力不足的问题"
+            ],
+            "id": "29d08f16"
         }
     ]
 }
