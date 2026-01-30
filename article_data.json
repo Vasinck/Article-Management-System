@@ -2259,6 +2259,105 @@
             "tags": [
                 "这是一篇计算机视觉基础骨干网络领域的论文，提出了基于波动方程建模的视觉主干网络WaveFormer。该方法将特征图视为随网络深度演化的空间波场，利用欠阻尼波动方程的物理特性来显式建模语义信息的传播动力学过程。核心机制是通过推导波动方程在频域的闭式解，实现频率与时间的解耦，在频域内对不同频率分量进行差异化的振荡调制以兼顾全局结构与高频细节。网络利用快速傅里叶变换构建了波传播算子，将全局交互的计算复杂度降低至对数线性级别，并以此为基础单元构建了层级化的金字塔型视觉架构。"
             ]
+        },
+        {
+            "id": "692c3793",
+            "title": "2026开年新风向：上下文即Teacher，三文详解Self-Distillation新范式",
+            "tags": [
+                "大语言模型领域提出基于上下文的自我蒸馏范式，利用推理时的额外上下文构建比基础模型更强的自我作为Teacher指导训练；SDFT通过检索旧任务示例作为Context构建Conditioned Teacher分布，让Student在没有演示的情况下通过KL散度拟合Teacher输出实现持续学习中的灾难性遗忘问题；SDPO利用Rich Feedback（如编译器报错）构建Self-Teacher，将稀疏的标量奖励信号转化为密集的Token级监督，通过蒸馏自我修正能力提升代码生成效果；OPSD定义Teacher Policy利用答案作为导航生成高质量思维链，让Student在自己的采样轨迹上拟合Teacher分布，优化Student与全知Teacher之间的分布距离以提升数学推理能力。"
+            ]
+        },
+        {
+            "id": "44ec4fa8",
+            "title": "(AAAI 2025) 空间信息去哪了？Feature Complementary Mapping Module 的设计逻辑",
+            "tags": [
+                "航拍图像目标检测领域提出 FBRT-YOLO，通过在 backbone 内部引入 Feature Complementary Mapping Module 实现浅层空间位置信息与深层语义特征的双向互补映射，缓解小目标在深层语义中位置消失的问题；FCM 通过 channel ↔ spatial 双向引导机制，让语义强的特征指导空间特征关注重要通道，让位置敏感的特征指导语义特征关注重要空间位置；以 Multi-Kernel Perception Unit 替代传统下采样，利用多尺度 depthwise 卷积串联扩大感受野并减少检测头数量；针对高分辨率航拍场景设计冗余驱动结构裁剪，重新设计下采样阶段的 channel expansion 与 spatial sampling 顺序，在保证精度的情况下显著减少参数量和计算量。"
+            ]
+        },
+        {
+            "id": "2f25e6e8",
+            "title": "英伟达开源C-RADIOv4 | 参数少10倍，性能反超DINOv3！用\"一鱼多吃\"颠覆视觉基础模型",
+            "tags": [
+                "视觉基础模型领域提出 C-RADIOv4，通过多教师蒸馏框架让一个学生模型同时向 SigLIP2（文本对齐）、DINOv3（自监督）和 SAM3（分割）三位顶尖教师学习，实现一个模型通吃分类、分割、检索等多种任务；采用随机分辨率训练策略，让模型在任何分辨率下同时看到所有教师，避免模式切换问题，实现分辨率不变的特征表示；引入平移等变损失，通过随机移动学生和教师看到的裁剪区域，以 Patch 大小为增量避免插值效应，让学生学习真正的语义对应关系而非记住固定位置输出；提出角度离散度归一化解决摘要特征损失不平衡问题，确保所有教师在损失中话语权平等。"
+            ]
+        },
+        {
+            "id": "8ba055c3",
+            "title": "(TCSVT 2025) MFACB：多尺度融合空洞卷积块，即插即用，永远开源！",
+            "tags": [
+                "语义分割领域提出 DSNet 和多尺度融合空洞卷积块 MFACB，通过在单个模块内融合多种空洞率对应的感受野，使网络在浅层阶段同时学习多尺度语义信息；设计同分辨率双分支结构，将细节建模与上下文建模并行进行，避免传统下采样带来的信息不可逆丢失，空间分支用标准稠密卷积保留边界纹理信息，上下文分支以小空洞率空洞卷积为核心逐步扩大感受野；引入多尺度注意力融合模块 MSAF，通过区域级与像素级注意力机制动态调节来自不同分支的信息权重，使跨分支特征融合从固定叠加转变为任务驱动的动态选择。"
+            ]
+        },
+        {
+            "id": "fc2ea070",
+            "title": "牛掰！轻量级VRF-DETR开源，仅13.5M 参数，实时推理，无人机小目标检测\"精度与效率双巅峰\"",
+            "tags": [
+                "无人机目标检测领域提出 VRF-DETR，通过多尺度上下文融合模块 MSCF 动态调整感受野，当遇到小目标时集中注意力于目标细节，面对大目标时着重把握整体轮廓；设计门控卷积 GConv 结合门控机制与深度可分离卷积降低参数量，门控多尺度融合模块 GMCF 先用全局注意力把握场景整体再进行局部处理解耦被遮挡目标。"
+            ]
+        },
+        {
+            "id": "85c7b509",
+            "title": "(CVPR 2025) 长程依赖 ≠ 全局 Attention：Token Aggregation Block 的巧妙设计",
+            "tags": [
+                "图像超分辨率领域提出 CATANet 和 Token Aggregation Block，通过 Content-Aware Token Aggregation 机制将全图中内容相似的 token 聚合为若干组，而非使用空间邻近的分组方式；共享一组全局 token centers 仅在训练阶段通过 EMA 更新，推理阶段完全固定，显著降低计算开销；TAB 将内容感知分组、组内自注意力、组间交叉注意力进行统一设计，组内通过 Intra-Group Self-Attention 实现细粒度长程依赖建模，组间通过 Inter-Group Cross-Attention 与全局 token centers 交互补充全局上下文约束；通过 Local Region Self-Attention 补充局部精细建模，与 TAB 形成互补。"
+            ]
+        },
+        {
+            "id": "3fa7e663",
+            "title": "Rethinking Transformer-Based Blind-Spot Network for Self-Supervised Image Denoising",
+            "tags": [
+                "TBSN是一个基于U-Net的多尺度Blind-Spot网络，首次系统性解决Transformer与Blind-Spot Network的结构冲突问题；提出两种满足Blind-Spot约束的Transformer注意力机制：Grouped Channel-wise Self-Attention（G-CSA）通过通道分组控制每组通道数小于空间分辨率，彻底规避中心像素信息泄露；Masked Window-based Self-Attention（M-WSA）通过固定空间掩码仅允许偶数坐标间交互，等效模拟dilated convolution的感受野扩展"
+            ]
+        },
+        {
+            "id": "713c02c2",
+            "title": "2",
+            "tags": [
+                "YOLO11-4K：面向4K全景图像实时小目标检测的高效架构",
+                "YOLO11-4K是Ultralytics YOLO11框架的扩展版本，通过引入P2细粒度检测层直接提取骨干网络早期高分辨率特征图，专门用于4K全景图像中的小目标检测；采用轻量级GhostConv骨干网络和C3Ghost模块减少计算冗余，结合C3k2模块改进特征聚合效率；端到端处理全分辨率3840×3840全景图像，无需下采样或裁剪，实现每帧28.3毫秒的实时推理速度"
+            ]
+        },
+        {
+            "id": "1a79f7df",
+            "title": "POLAFORMER: POLARITY-AWARE LINEAR ATTENTION FOR VISION TRANSFORMERS",
+            "tags": [
+                "视觉Transformer/注意力机制领域的线性注意力改进模块。Polarity-Aware Linear Attention首次显式建模query-key的正负号关系，将注意力交互拆分为同号项和异号项两条分支；解决现有线性注意力因非负kernel导致负值交互信息完全丢失的问题，提出具有正一阶和二阶导数的通道级可学习幂函数，从理论上保证注意力熵下降；使线性注意力在不牺牲O(N)复杂度的前提下恢复softmax的尖峰特性，通过Q/K极性分解和V通道对称拆分实现双分支融合"
+            ]
+        },
+        {
+            "id": "c00440b9",
+            "title": "Rethinking Transformer-Based Blind-Spot Network for Self-Supervised Image Denoising",
+            "tags": [
+                "TBSN是一个基于U-Net的多尺度Blind-Spot网络，首次系统性解决Transformer与Blind-Spot Network的结构冲突问题。提出两种满足Blind-Spot约束的Transformer注意力机制：Grouped Channel-wise Self-Attention（G-CSA）通过通道分组控制每组通道数小于空间分辨率，彻底规避中心像素信息泄露；Masked Window-based Self-Attention（M-WSA）通过固定空间掩码仅允许偶数坐标间交互，等效模拟dilated convolution的感受野扩展。"
+            ]
+        },
+        {
+            "id": "bce723ab",
+            "title": "YOLO11-4K：面向4K全景图像实时小目标检测的高效架构",
+            "tags": [
+                "YOLO11-4K是Ultralytics YOLO11框架的扩展版本，通过引入P2细粒度检测层直接提取骨干网络早期高分辨率特征图，专门用于4K全景图像中的小目标检测。采用轻量级GhostConv骨干网络和C3Ghost模块减少计算冗余，结合C3k2模块改进特征聚合效率。端到端处理全分辨率3840×3840全景图像，无需下采样或裁剪，实现每帧28.3毫秒的实时推理速度。"
+            ]
+        },
+        {
+            "id": "0d4e02ff",
+            "title": "Rewrite the Stars",
+            "tags": [
+                "轻量级网络/卷积神经网络领域的即插即用模块。StarConv通过逐元素乘（star operation）在不增加宽度和结构复杂度的前提下，等价于隐式的多项式核映射，单层即可产生约O(d²)个线性无关的隐式特征维度。首次系统性证明star operation并非只是门控或注意力技巧，而是深层网络实现高阶非线性表达的高效方式。提出StarNet作为验证模型，采用四阶段层级式CNN结构，通过DW-Conv+FC双分支进行逐元素乘完成特征融合，在保持低计算量的同时实现高精度。"
+            ]
+        },
+        {
+            "id": "c4d1cb36",
+            "title": "POLAFORMER: POLARITY-AWARE LINEAR ATTENTION FOR VISION TRANSFORMERS",
+            "tags": [
+                "视觉Transformer/注意力机制领域的线性注意力改进模块。Polarity-Aware Linear Attention首次显式建模query-key的正负号关系，将注意力交互拆分为同号项和异号项两条分支。解决现有线性注意力因非负kernel导致负值交互信息完全丢失的问题，提出具有正一阶和二阶导数的通道级可学习幂函数，从理论上保证注意力熵下降。使线性注意力在不牺牲O(N)复杂度的前提下恢复softmax的尖峰特性，通过Q/K极性分解和V通道对称拆分实现双分支融合。"
+            ]
+        },
+        {
+            "id": "76682206",
+            "title": "InceptionNeXt: When Inception Meets ConvNeXt",
+            "tags": [
+                "卷积神经网络/轻量级网络领域的Token Mixer重构。指出ConvNeXt中7×7大核depthwise convolution在GPU上严重受限于memory access而非FLOPs。提出Inception Depthwise Convolution将通道沿维度拆分为4个并行分支：3×3深度卷积、1×k横向条带卷积、k×1纵向条带卷积和恒等映射，将k×k的二次复杂度转化为线性复杂度。在ConvNeXt框架内仅替换DWConv为Inception DWConv，不改训练策略、不引入attention或额外token mixer，实现精度几乎不降而吞吐显著提升。"
+            ]
         }
     ]
 }
